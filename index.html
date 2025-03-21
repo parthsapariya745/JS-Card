@@ -105,13 +105,13 @@
             img.setAttribute("src", images[i]);
 
             let pdt = document.createElement("h2");
-            pdt.textContent = product[i]; 
+            pdt.innerText = product[i]; 
 
             let pr = document.createElement("p");
-            pr.textContent = price[i]; 
+            pr.innerText = price[i]; 
 
             let btn = document.createElement("button");
-            btn.textContent = button[i]; 
+            btn.innerText = button[i]; 
             
             div.appendChild(img);
             div.appendChild(pdt);

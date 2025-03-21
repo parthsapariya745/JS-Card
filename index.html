@@ -18,25 +18,8 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 40px;
-        background-image: url("https://files.oaiusercontent.com/file-6zG4gaH2tENW9LSiYzWwnB?se=2025-03-20T17%3A42%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D69c547b4-f4e2-4a2f-b650-c500b83e61fe.webp&sig=gfNsg43DK7Nacebu4c285R8Rp7Q4Xg0WUbhUjvZqgL4%3D");
-        background-size: cover;
-        background-position: center;
-        object-fit: cover;
-        background-repeat: no-repeat;
+        background-image: url("https://i0.wp.com/etchworksdigital.com/wp-content/uploads/2014/04/The-best-top-desktop-hd-dark-black-wallpapers-dark-black-wallpaper-dark-background-dark-wallpaper-23.jpg?fit=1024%2C640&ssl=1");
         padding: 70px 5vw;
-        position: relative;
-    }
-    .parent::before{
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: "";
-        height: 100%;
-        width: 100%;
-        -webkit-box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
-        -moz-box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
-        box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
-        z-index: 0;
     }
     .child{
         width: 300px;
@@ -68,15 +51,16 @@
         border-radius: 7px;
         border: none;
         cursor: pointer;
-        font-size: 17px;
-        background-color: transparent;
-        color: white;
-        box-shadow: 0px 0px 7px white;
         transition: .6s;
-    }
-    .child button:hover{
+        font-size: 17px;
+        color: white;
         background-color: white;
         color: #212121;
+    }
+    .child:hover button{
+        box-shadow: 0px 0px 7px white;
+        background-color: transparent;
+        color: white;
     }
     @media (max-width: 710px) {
         .child img{
@@ -92,12 +76,30 @@
     <div class="parent" id="container"></div>
 
     <script>
-        let images = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLLTBbrBcYYkglGYPti86DY0qk05pGmgSmQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UJslOJjZ3S18lhhyLAEBNahcmu4xAWgT1Q&s","https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/f/s/0/l-4mss1813-09-snitch-original-imagszgjg5ewadhw.jpeg?q=90&crop=false","https://cdn.pixabay.com/photo/2019/06/24/00/57/watch-4294991_1280.jpg"];
-        let product = ["Shoe","Glasses","Shirt","Watch"];
-        let price = ["₹1,199","₹799","₹999","₹899"];
-        let button = ["Read more","Read more","Read more","Read more"];
+        let images = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLLTBbrBcYYkglGYPti86DY0qk05pGmgSmQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UJslOJjZ3S18lhhyLAEBNahcmu4xAWgT1Q&s",
+        "https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/f/s/0/l-4mss1813-09-snitch-original-imagszgjg5ewadhw.jpeg?q=90&crop=false","https://cdn.pixabay.com/photo/2019/06/24/00/57/watch-4294991_1280.jpg",
+        "https://fabrikart.co.in/wp-content/uploads/2024/07/j1.webp",
+        "https://assets.ajio.com/medias/sys_master/root/20231116/mlcA/6555c7caafa4cf41f58c174f/-473Wx593H-466794990-blue-MODEL.jpg",
+        "https://modernmotifsocks.com/cdn/shop/products/329_large.jpeg?v=1488381005",
+        "https://m.media-amazon.com/images/I/41aGj9ksyXL.jpg",
+        "https://thesleepcompany.in/cdn/shop/files/1_e4a34bd3-85cf-4507-8f5f-62bb7f508bce.webp?v=1742496262",
+        "https://www.hokybo.com/CompanyData/Product/13CT003E/1.jpg",
+        "https://m.media-amazon.com/images/I/61ynoafRIHL.jpg",
+        "https://static.toiimg.com/thumb/msid-100449799,width-1280,height-720,resizemode-4/100449799.jpg",
+        "https://m.media-amazon.com/images/I/810HI-4wV+L.jpg",
+        "https://serverstore.in/image/cache/catalog/serverstore/Lenovo%20TAB%20M10%20HD-550x400w.png",
+        "https://www.zdnet.com/a/img/resize/825581fae2a55ff13555450e26e4d4d5f183cef3/2024/11/13/5082cd4a-b7ce-4606-9866-0e1ae7f45b29/thinkpad-x13-2-in-1-gen-5-2.jpg?auto=webp&fit=crop&height=675&width=1200",
+        "https://img.freepik.com/premium-photo/wireless-headphones-hd-8k-wallpaper-stock-photographic-image_853645-35557.jpg?w=360"];
+
+        let product = ["Shoes","Glasses","Shirt","Watch","Pent","T-shirt","socks","bottle","chair","table","Fan","AC","Phone","Tablet","Laptop","Headphone"];
+
+        let price = ["₹ 1,199","₹ 799","₹ 999","₹ 899","₹ 599","₹ 399","₹ 199","₹ 449","₹ 2,199","₹ 32,899","₹ 1,439","₹ 19,999","₹ 22,459","₹ 39,999","₹ 79,999","₹ 1,499"];
+
+        let button = ["Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more","Read more"];
+
         let container = document.getElementById("container");
-        for(let i = 0; i < 4; i++) {
+        for(let i = 0; i < 16; i++) {
             let div = document.createElement("div");
             div.setAttribute("class", "child");
 

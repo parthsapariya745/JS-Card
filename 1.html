@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS using create multiple divs</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .parent{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        background-image: url("https://files.oaiusercontent.com/file-6zG4gaH2tENW9LSiYzWwnB?se=2025-03-20T17%3A42%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D69c547b4-f4e2-4a2f-b650-c500b83e61fe.webp&sig=gfNsg43DK7Nacebu4c285R8Rp7Q4Xg0WUbhUjvZqgL4%3D");
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        padding: 70px 5vw;
+        position: relative;
+    }
+    .parent::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        -webkit-box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
+        -moz-box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
+        box-shadow: inset 177px 200px 128px 500px rgba(0,0,0,0.47);
+        z-index: 0;
+    }
+    .child{
+        width: 300px;
+        background-color: #212121; 
+        box-shadow: 0px 0px 20px white;
+        border-radius: 30px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .child img{
+        height: 330px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .child h2{
+        font-size: 28px;
+        padding: 7px 25px 0px 25px;
+        color: #F5F5F5;
+    }
+    .child p{
+        font-size: 18px;
+        font-weight: 500;
+        padding: 5px 25px 15px 25px;
+        color: #FFD700;
+    }
+    .child button{
+        margin: 0px 0px 20px 25px;
+        padding: 10px 22px;
+        border-radius: 7px;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+        background-color: transparent;
+        color: white;
+        box-shadow: 0px 0px 7px white;
+        transition: .6s;
+    }
+    .child button:hover{
+        background-color: white;
+        color: #212121;
+    }
+    @media (max-width: 710px) {
+        .child img{
+            height: 300px;
+        }
+        .child button{
+            padding: 10px 0px;
+            width: 84%;
+        }
+    }
+</style>
+<body>
+    <div class="parent" id="container"></div>
+
+    <script>
+        let images = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLLTBbrBcYYkglGYPti86DY0qk05pGmgSmQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UJslOJjZ3S18lhhyLAEBNahcmu4xAWgT1Q&s","https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/f/s/0/l-4mss1813-09-snitch-original-imagszgjg5ewadhw.jpeg?q=90&crop=false","https://cdn.pixabay.com/photo/2019/06/24/00/57/watch-4294991_1280.jpg"];
+        let product = ["Shoe","Glasses","Shirt","Watch"];
+        let price = ["₹1,199","₹799","₹999","₹899"];
+        let button = ["Read more","Read more","Read more","Read more"];
+        let container = document.getElementById("container");
+        for(let i = 0; i < 4; i++) {
+            let div = document.createElement("div");
+            div.setAttribute("class", "child");
+
+            let img = document.createElement("img");
+            img.setAttribute("src", images[i]);
+
+            let pdt = document.createElement("h2");
+            pdt.textContent = product[i]; 
+
+            let pr = document.createElement("p");
+            pr.textContent = price[i]; 
+
+            let btn = document.createElement("button");
+            btn.textContent = button[i]; 
+            
+            div.appendChild(img);
+            div.appendChild(pdt);
+            div.appendChild(pr);
+            div.appendChild(btn);
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html>
